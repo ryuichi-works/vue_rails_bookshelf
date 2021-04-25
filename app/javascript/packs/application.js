@@ -19,7 +19,7 @@
 
 import Vue from 'vue'
 import App from './app.vue'
-import Router from './router/router.js'
+import Router from '../router/router.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
