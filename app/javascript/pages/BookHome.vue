@@ -59,12 +59,10 @@ export default {
         });
       },
       setBookInfo(id){
-        console.log('前');
         axios.get(`api/books/${id}.json`).then(res => {
           this.bookInfo = res.data;
           this.bookInfoBool = true;
         });
-        console.log('後');
       }
     }
   }

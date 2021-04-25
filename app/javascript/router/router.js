@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import BookHome from '../BookHome.vue'
-import BookCreate from '../BookCreate.vue'
+import BookHome from '../pages/BookHome.vue'
+import BookCreate from '../pages/BookCreate.vue'
 
 Vue.use(VueRouter)
 
