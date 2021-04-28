@@ -32,6 +32,7 @@ export default new Vuex.Store({
     },
     deleteBook(state, { id }) {
       axios.delete(`/api/books/${id}`).then(res => {
+        state.books = [];
         state.bookInfo = '';
         state.bookInfoBool = false;
       })
