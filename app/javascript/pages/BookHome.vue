@@ -39,13 +39,6 @@ import axios from "axios";
 
 export default {
   name: "BookHome",
-  // data: function() {
-  //   return {
-  //     bookInfo: {},
-  //     bookInfoBool: false,
-  //     books: []
-  //   }
-  // },
   computed: {
     books() {
       return this.$store.state.books;
@@ -61,31 +54,12 @@ export default {
     this.$store.commit("fetchBooks");
   },
   methods: {
-    // fetchBooks() {
-    //   axios.get('/api/books').then((res) => {
-    //     for(var i = 0; i < res.data.books.length; i++) {
-    //       this.books.push(res.data.books[i]);
-    //     }
-    //   }, (error) => {
-    //     console.log(error);
-    //   });
-    // },
     setBookInfo(id) {
       this.$store.commit("setBookInfo", { id });
-      // axios.get(`api/books/${id}.json`).then(res => {
-      //   this.bookInfo = res.data;
-      //   this.bookInfoBool = true;
-      // });
     },
     deleteBook(id) {
       this.$store.commit('deleteBook', { id })
       this.$store.commit('fetchBooks')
-      // axios.delete(`/api/books/${id}`).then((res) => {
-      //   this.books = [];
-      //   this.bookInfo = "";
-      //   this.bookInfoBool = false;
-      //   this.fetchBooks();
-      // });
     },
   },
 };

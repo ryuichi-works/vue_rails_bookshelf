@@ -17,6 +17,8 @@ export default new Vuex.Store({
       axios.get('/api/books').then((res) => {
         for (var i = 0; i < res.data.books.length; i++) {
           state.books.push(res.data.books[i]);
+          state.bookInfo = {};
+          state.bookInfoBool = false;
         }
       }, (error) => {
         console.log(error);
