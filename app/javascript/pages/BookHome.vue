@@ -44,22 +44,27 @@ export default {
       return {
         bookInfo: {},
         bookInfoBool: false,
-        books: [],
+        // books: []
       }
     },
     mounted: function() {
-      this.fetchBooks();
+      this.$store.commit('fetchBooks')
+    },
+    computed: {
+      books() {
+        return this.$store.state.books
+      }
     },
     methods: {
-      fetchBooks() {
-        axios.get('/api/books').then((res) => {
-          for(var i = 0; i < res.data.books.length; i++) {
-            this.books.push(res.data.books[i]);
-          }
-        }, (error) => {
-          console.log(error);
-        });
-      },
+      // fetchBooks() {
+      //   axios.get('/api/books').then((res) => {
+      //     for(var i = 0; i < res.data.books.length; i++) {
+      //       this.books.push(res.data.books[i]);
+      //     }
+      //   }, (error) => {
+      //     console.log(error);
+      //   });
+      // },
       setBookInfo(id){
         axios.get(`api/books/${id}.json`).then(res => {
           this.bookInfo = res.data;
