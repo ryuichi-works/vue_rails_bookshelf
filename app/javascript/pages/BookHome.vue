@@ -54,7 +54,6 @@ export default {
     },
     deleteBook(id) {
       this.$store.commit('deleteBook', { id })
-      this.$store.commit('fetchBooks')
     },
   },
 };

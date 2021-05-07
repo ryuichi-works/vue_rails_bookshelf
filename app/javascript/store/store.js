@@ -16,9 +16,9 @@ export default new Vuex.Store({
       state.books = [];
       axios.get('/api/books').then((res) => {
         for (var i = 0; i < res.data.books.length; i++) {
-          state.books.push(res.data.books[i]);
           state.bookInfo = {};
           state.bookInfoBool = false;
+          state.books.push(res.data.books[i]);
         }
       }, (error) => {
         console.log(error);
@@ -35,6 +35,13 @@ export default new Vuex.Store({
         state.books = [];
         state.bookInfo = '';
         state.bookInfoBool = false;
+        axios.get('/api/books').then((res) => {
+          for (var i = 0; i < res.data.books.length; i++) {
+            state.books.push(res.data.books[i]);
+          }
+        }, (error) => {
+          console.log(error);
+        });
       })
     }
   }
