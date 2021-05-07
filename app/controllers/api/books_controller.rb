@@ -1,5 +1,5 @@
 class Api::BooksController < ApplicationController
-  protect_from_forgery :except => [:create, :update]
+  protect_from_forgery :except => [:create, :update, :destroy]
   
   def index
     @books = Book.all
