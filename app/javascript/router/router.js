@@ -9,7 +9,9 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', name: 'BookHome', component: BookHome },
   { path: '/create', name: 'BookCreate', component: BookCreate },
-  { path: '/edit/:id', name: 'BookEdit', component: BookEdit }
+  { path: '/edit/:id', name: 'BookEdit', component: BookEdit },
+  { path: '/signup', name: 'Signup', component: Signup },
+  { path: '/signin',    name: 'Signin',      component: Signin }
 ];
 
 export default new VueRouter({ routes });
