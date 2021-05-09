@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import BookHome from '../pages/BookHome.vue'
 import BookCreate from '../pages/BookCreate.vue'
 import BookEdit from '../pages/BookEdit.vue'
+import Signup from '../pages/Signup.vue'
+import Signin from '../pages/Signin.vue'
 
 Vue.use(VueRouter)
 
